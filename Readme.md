@@ -1,7 +1,7 @@
 # Cloud Design Patterns
 
 ## 概要
-Azure アーキテクチャ センターにある[クラウド設計パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/#catalog-of-patterns)の中で、一目でわかりにくいパターンについて補足する
+Azure アーキテクチャ センターにある[クラウド設計パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/#catalog-of-patterns)から、一目でわかりにくい物についてピックアップし補足します
 
 ## [アンバサダー (Ambassador)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/ambassador)
 Ambassador は、**特使、大使**といった意味の単語だが、単語の意味からはパターンが想像しにくい。アンバサダーパターンは、レガシーアプリケーションや変更が困難なアプリケーションに対して、プロキシー的に配置する事でリトライや監視などレジリエントな機能を追加するパターンである
