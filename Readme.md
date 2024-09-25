@@ -1,7 +1,7 @@
 # Cloud Design Patterns
 
 ## 概要
-[Azure アーキテクチャ センター](https://learn.microsoft.com/ja-jp/azure/architecture/) - [クラウド設計パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/#catalog-of-patterns) の中から、一目でわかりにくい設計パターンについて補足します
+[Azure アーキテクチャ センター](https://learn.microsoft.com/ja-jp/azure/architecture/) - [クラウド設計パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/#catalog-of-patterns) の中から、一目でわかりにくい設計パターンについて簡潔に補足します
 
 ## [アンバサダー (Ambassador)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/ambassador)
 　Ambassador は、**特使、大使**といった意味の単語だが、単語の意味からはパターンが想像しにくい。アンバサダーパターンは、レガシーアプリケーションや変更が困難なアプリケーションに対して、プロキシー的に配置する事でリトライや監視などレジリエントな機能を追加するパターンである
@@ -9,7 +9,7 @@
 | ![Ambassador](images/ambassador.png) |
 | ----- |
 
-- アンバサダーにオフロードされる機能は、アプリケーションとは別に管理でき、アプリケーションの従来の機能を妨げることなく、更新および変更が可能
+- アンバサダーにオフロードされる機能は、アプリケーションとは別に管理でき、アプリケーションの従来の機能を妨げることなく更新および変更が可能
 
 - アンバサダーサービスは、サイドカーとしてデプロイすることができ、デーモンまたはWindowsサービスとしてもデプロイ可能
 
