@@ -1,7 +1,7 @@
 # Cloud Design Patterns
 
 ## 概要
-[Azure アーキテクチャ センター](https://learn.microsoft.com/ja-jp/azure/architecture/)：[クラウド設計パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/#catalog-of-patterns) の中から、パターン名からは想像しにくい（わかりにくい）設計パターンについて補足します
+[Azure アーキテクチャ センター](https://learn.microsoft.com/ja-jp/azure/architecture/)：[クラウド設計パターン](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/#catalog-of-patterns) の中から、パターン名からは直感的に想像しにくい設計パターンについて補足します
 
 ## [アンバサダー (Ambassador)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/ambassador)
 　Ambassador は、**特使、大使** といった意味の単語だが、単語の意味からは設計パターンが想像しにくい。アンバサダーパターンは、レガシーアプリケーションや変更が困難なアプリケーションに対して、プロキシー的に配置する事でリトライや監視などレジリエントな機能を追加する設計である
@@ -30,5 +30,21 @@
 - 障害個所を特定しやすくなる半面、リソースの分割により全体のリソース利用効率が低下する可能性がある
 - マイクロサービスアーキテクチャとの親和性が高く、Kubernetes などのコンテナ技術を使用することが推奨される
 
-## [コレオグラフィ (Choreography)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/choreography)
-Choreography は、**振り付け** といった意味の単語だが、IT 用語としては **オーケストレーション** の意味を持つ。ワークフロー ロジックを分散化して、システム内の他のコンポーネントに責任を分散させる設計パターンである
+## [コレオグラフィ (choreography)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/choreography)
+Choreography は、**ダンスの振付や構成** といった意味を持つ。オーケストレーターパターンが、中央のオーケストレーターにより全体のワークフローを管理するのに対し、コレオグラフィパターンは、中央の**オーケストレーターなし**に各サービスが独立してワークフローを管理しますする。
+
+**オーケストレーター**：中央にワークフローを管理するオーケストレーター（全体のフローを管理するプログラム）を配置するパターン
+
+|<img src="images/orchestrator.png" width= "600px">|
+|-|
+
+- サービス間の依存関係（例えば実行順序等）が必要な場合には、オーケストレーターが適している
+
+**コレオグラフィ**：中央に Service Bus 等のメッセージ ブローカーを配置することで、各サービス側で独立してワークフローを管理するパターン
+
+|<img src="images/choreography.png" width= "600px">|
+|-|
+
+- 独立したビジネス操作が並列で処理されるシンプルなワークフローに適している
+- メッセージブローカーを使用することで、システムのスケーラビリティが向上し、サービス間の結合度を低く保つことができる
+- メッセージのバッファリングや再試行機能により、システムの信頼性と耐障害性も向上する
