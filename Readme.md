@@ -6,7 +6,7 @@
 ## [アンバサダー (Ambassador)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/ambassador)
 　Ambassador は、**特使、大使** といった意味の単語だが、単語の意味からは設計パターンが想像しにくい。アンバサダーパターンは、レガシーアプリケーションや変更が困難なアプリケーションに対して、プロキシー的に配置する事でリトライや監視などレジリエントな機能を追加する設計である
 
-|<img src="images/ambassador.png" width= "600px">|
+|![Ambassador](images/ambassador.png)|
 |-|
 
 - アンバサダーにオフロードされる機能は、アプリケーションとは別に管理でき、アプリケーションの従来の機能を妨げることなく更新が可能
@@ -16,7 +16,7 @@
 ## [破損対策レイヤー (Anti-corruption Layer)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/anti-corruption-layer)
 　レガシーシステムの段階的な移行や、外部システムとの相互運用が必要な場合に用いられる設計パターンです。**破損対策レイヤー** を設ける事で、新しいシステムが古いインフラストラクチャやプロトコルに依存せずに済みます
 
-|<img src="images/anti-corruption-layer.png" width= "600px">|
+|![Anti-corruption Layer](images/anti-corruption-layer.png)|
 |-|
 
 - 新旧システム間の統合を維持し続けることができ、移行の途中で発生する問題を最小限に抑え、レガシシステムの機能を段階的に新しいシステムに移行する際の柔軟性を高める
@@ -24,7 +24,7 @@
 ## [バルクヘッド (Bulkhead)](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/bulkhead)
 　Bulkhead は、**船体の区画 (bulkhead: 隔壁)** になぞらえたパターン名で、一部区画が浸水しても船が沈まないのと同じで、アプリケーションの要素をプールに分離し、1 つの要素が失敗しても、他の要素に影響を与えないようにする設計パターン
 
-|<img src="images/bulkhead.png" width= "600px">|
+|![Bulkhead](images/bulkhead.png)|
 |-|
 
 - 障害個所を特定しやすくなる半面、リソースの分割により全体のリソース利用効率が低下する可能性がある
